@@ -11,14 +11,19 @@ export const App = () => {
   const { connectToMetamask } = useWallet();
   const { mint, getContractName, isContractLoaded } = useContract();
   const wallet = useRecoilValue(walletState);
-  const [contractName, setContractName] = useState("");
+  const [title, setTitle] = useState("");
   const [gemstoneId, setGemstoneId] = useState(1);
   const [customerAddress, setCustomerAddress] = useState("");
   const [isAwaitingTxn, setIsAwaitingTxn] = useState(false);
 
   useEffect(() => {
-    isContractLoaded && getContractName().then((name) => setContractName(name));
-  }, [isContractLoaded]);
+    if (!isContractLoaded || !wallet.address) return;
+    if (wallet.chainId != 1) {
+      setTitle("Switch to Mainnet");
+    } else {
+      isContractLoaded && getContractName().then((name) => setTitle(name));
+    }
+  }, [isContractLoaded, wallet]);
 
   const handleMint = async () => {
     setIsAwaitingTxn(true);
@@ -38,7 +43,7 @@ export const App = () => {
         background: "linear-gradient(to bottom, #eff1fa, #c1c7eb)",
       }}
     >
-      {contractName ? (
+      {title ? (
         <div
           style={{
             display: "flex",
@@ -50,7 +55,7 @@ export const App = () => {
             textAlign: "center",
           }}
         >
-          <span style={{ fontSize: "32px" }}>{contractName}</span>
+          <span style={{ fontSize: "32px" }}>{title}</span>
           <input
             style={{ minWidth: "300px" }}
             type="text"

@@ -25,12 +25,12 @@ export const useWallet = () => {
     }
   };
 
-  const setWalletState = () => {
-    signer.getAddress().then((address) => {
-      setWallet({
-        address,
-        chainId: provider.chainId,
-      });
+  const setWalletState = async () => {
+    const address = await signer.getAddress();
+    const network = await provider.getNetwork();
+    setWallet({
+      address,
+      chainId: network.chainId,
     });
   };
 
