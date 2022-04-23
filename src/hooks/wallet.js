@@ -10,11 +10,22 @@ export const useWallet = () => {
 
   useEffect(() => {
     window.ethereum && getMetamask();
-  }, []);
+  }, [window.ethereum]);
 
   useEffect(() => {
-    signer && setWalletState();
+    if (!signer) return;
+    setWalletState();
+    listenToNetworkSwitch();
   }, [signer]);
+
+  const listenToNetworkSwitch = () => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+    provider.on("network", (newNetwork, oldNetwork) => {
+      if (oldNetwork) {
+        window.location.reload();
+      }
+    });
+  };
 
   const getMetamask = () => {
     const metamask = window.ethereum;

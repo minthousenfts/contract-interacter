@@ -19,7 +19,7 @@ export const App = () => {
   useEffect(() => {
     if (wallet.chainId != 1 && wallet.address) {
       setTitle("Switch to Mainnet");
-    } else {
+    } else if (wallet.chainId == 1) {
       isContractLoaded && getContractName().then((name) => setTitle(name));
     }
   }, [isContractLoaded, wallet]);
