@@ -13,7 +13,6 @@ export const App = () => {
   const wallet = useRecoilValue(walletState);
   const [title, setTitle] = useState("");
   const [gemstoneId, setGemstoneId] = useState(0);
-  const [customerAddress, setCustomerAddress] = useState("");
   const [isAwaitingTxn, setIsAwaitingTxn] = useState(false);
 
   useEffect(() => {
@@ -26,7 +25,7 @@ export const App = () => {
 
   const handleMint = async () => {
     setIsAwaitingTxn(true);
-    const response = await mint(customerAddress, gemstoneId);
+    const response = await mint(wallet.address, gemstoneId);
     if (response) {
       toast.success("Mint successful");
     } else {
@@ -55,12 +54,6 @@ export const App = () => {
       >
         <span style={{ fontSize: "32px" }}>{title}</span>
         <input
-          style={{ minWidth: "300px" }}
-          type="text"
-          placeholder="0x0000000..."
-          onChange={(e) => setCustomerAddress(e.target.value)}
-        />
-        <input
           type="range"
           min="0"
           max="5"
@@ -74,7 +67,7 @@ export const App = () => {
           onMint={handleMint}
           gemType={getGemstoneName(gemstoneId)}
           isLoading={isAwaitingTxn}
-          isDisabled={wallet.address && !customerAddress}
+          isDisabled={false}
         />
         <span style={{ fontSize: "16px" }}>
           Connected address: {wallet.address ? wallet.address : "None"}
