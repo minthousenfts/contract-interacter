@@ -74,7 +74,7 @@ export const App = () => {
           onMint={handleMint}
           gemType={getGemstoneName(gemstoneId)}
           isLoading={isAwaitingTxn}
-          isDisabled={!customerAddress}
+          isDisabled={wallet.address && !customerAddress}
         />
         <span style={{ fontSize: "16px" }}>
           Connected address: {wallet.address ? wallet.address : "None"}
