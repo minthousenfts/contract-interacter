@@ -1,22 +1,22 @@
 export const getGemstoneName = (gemstoneId) => {
   let gemstoneName = "";
   switch (gemstoneId) {
-    case 1:
+    case 0:
       gemstoneName = "Amethyst";
       break;
-    case 2:
+    case 1:
       gemstoneName = "Sapphire";
       break;
-    case 3:
+    case 2:
       gemstoneName = "Emerald";
       break;
-    case 4:
+    case 3:
       gemstoneName = "Citrine";
       break;
-    case 5:
+    case 4:
       gemstoneName = "Amber";
       break;
-    case 6:
+    case 5:
       gemstoneName = "Ruby";
       break;
     default:

@@ -12,7 +12,7 @@ export const App = () => {
   const { mint, getContractName, isContractLoaded } = useContract();
   const wallet = useRecoilValue(walletState);
   const [title, setTitle] = useState("");
-  const [gemstoneId, setGemstoneId] = useState(1);
+  const [gemstoneId, setGemstoneId] = useState(0);
   const [customerAddress, setCustomerAddress] = useState("");
   const [isAwaitingTxn, setIsAwaitingTxn] = useState(false);
 
@@ -62,8 +62,8 @@ export const App = () => {
         />
         <input
           type="range"
-          min="1"
-          max="6"
+          min="0"
+          max="5"
           value={gemstoneId}
           onChange={(e) => {
             setGemstoneId(+e.target.value);
