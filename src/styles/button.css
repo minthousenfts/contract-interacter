@@ -6,6 +6,7 @@ button {
   color: #4a4a4a;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
+  margin: 20px 0px;
 }
 
 button:hover {

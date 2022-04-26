@@ -12,6 +12,8 @@ import truncateEthAddress from "truncate-eth-address";
 import "./styles/index.css";
 // import images 
 import mgc_logo from "./assets/mgc_logo.png";
+import Amethyst from "./assets/Stone_Purple.png";
+import gif from "./assets/pikachu.gif";
 
 export const App = () => {
   const { connectToMetamask } = useWallet();
@@ -43,28 +45,42 @@ export const App = () => {
   return (
     <div className="body-div">
       <div className="content-wrap">
-        <img src={mgc_logo} />
+        <img className="logo" src={mgc_logo} />
         <span className="title">{title}</span>
-        <input
-          className="gemstone-picker"
-          type="range"
-          min="0"
-          max="5"
-          value={gemstoneId}
-          onChange={(e) => {
-            setGemstoneId(+e.target.value);
-          }}
-        />
-        <Button
-          onConnectToMetamask={connectToMetamask}
-          onMint={handleMint}
-          gemType={getGemstoneName(gemstoneId)}
-          isLoading={isAwaitingTxn}
-          isDisabled={false}
-        />
-        <span style={{ fontSize: "16px" }}>
-          Connected address: {wallet.address ? truncateEthAddress(wallet.address) : "None"}
-        </span>
+        <div className="gemstone-section">
+          <img className="gemstone-img" src={Amethyst} />
+          <div>
+            {/* hiding gemstone input for now because only purple gemstone is currently available */}
+            {/* <input
+              className="gemstone-picker"
+              type="range"
+              min="0"
+              max="5"
+              value={gemstoneId}
+              onChange={(e) => {
+                setGemstoneId(+e.target.value);
+              }}
+            /> */}
+            <Button
+              onConnectToMetamask={connectToMetamask}
+              onMint={handleMint}
+              gemType={getGemstoneName(gemstoneId)}
+              isLoading={isAwaitingTxn}
+              isDisabled={false}
+            />
+            <span style={{ fontSize: "16px" }}>
+              Connected address: {wallet.address ? truncateEthAddress(wallet.address) : "None"}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div className="footer">
+        <div>
+          <a href="https://www.maltgraincane.com/">Malt, Grain & Cane Store</a>
+          <a href="https://www.maltgraincane.com/pages/about">About Us</a>
+          <a href="https://www.minthouse.dev/">NFTs by Minthouse.dev</a>
+        </div>
+        <img src={gif} />
       </div>
     </div>
   );

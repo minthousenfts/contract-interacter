@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Roboto';
+    margin: 0;
 }
 
 html {
@@ -9,8 +10,30 @@ html {
     color: #4a4a4a
 }
 
-img {
+.body-div {
+    height: 100vh;
+    position: relative;
+}
+
+.gemstone-section {
+    display: flex;
+    width: 100vh;
+}
+.gemstone-section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 30px;
+}
+
+.logo {
     width: 100px;
+}
+.gemstone-img {
+    max-width: 40vw;
+    max-height: 35vh;
 }
 
 .content-wrap {
@@ -19,10 +42,61 @@ img {
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    padding-top: 4rem;
+    padding: 2rem;
     text-align: center;
 }
 
 .title {
     font-size: 24px;
+}
+
+.footer {
+    background-color: black;
+    height: 25vh;
+    width: calc(100vw - 70px);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px;
+}
+.footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 80%;
+}
+.footer div a {
+    color: #f8f7f1;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding-bottom: 1px;
+    letter-spacing: 1.5px;
+    border-bottom: solid 0.5px #f8f7f1;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+.footer div a:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    padding-bottom: 3px;
+}
+.footer img {
+    max-height: 80%;
+}
+
+/* make it responsive */
+@media only screen and (max-width: 800px) {
+    .gemstone-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gemstone-section div {
+        align-items: center;
+    }
+    .footer {
+        position: static;
+    }
 }
