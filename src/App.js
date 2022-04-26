@@ -35,9 +35,11 @@ export const App = () => {
     setIsAwaitingTxn(true);
     const response = await mint(wallet.address, gemstoneId);
     if (response) {
-      toast.success("Mint successful");
+      console.log(response);
+      toast.success("Mint successful. Might take a while to show on opensea.");
     } else {
-      toast.error("Mint failed, see console for error");
+      toast.error("Mint failed. Most likely address is not whitelisted. see console for full error");
+      console.log(toast.error)
     }
     setIsAwaitingTxn(false);
   };

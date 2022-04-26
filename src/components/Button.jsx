@@ -21,12 +21,9 @@ export const Button = (props) => {
 
   return (
     <button onClick={handleClick} disabled={props.isDisabled}>
-      {message}
       {props.isLoading ? (
-        <div>
-          <i className="fa fa-spinner fa-spin" />
-        </div>
-      ) : null}
+        "Minting"
+      ) : message}
     </button>
   );
 };
