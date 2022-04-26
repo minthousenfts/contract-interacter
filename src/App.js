@@ -1,3 +1,4 @@
+// import dependencies
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useRecoilValue } from "recoil";
@@ -6,6 +7,11 @@ import { useContract } from "./hooks/contract";
 import { useWallet } from "./hooks/wallet";
 import { walletState } from "./state/app";
 import { getGemstoneName } from "./utils/functions";
+import truncateEthAddress from "truncate-eth-address";
+// import styles 
+import "./styles/index.css";
+// import images 
+import mgc_logo from "./assets/mgc_logo.png";
 
 export const App = () => {
   const { connectToMetamask } = useWallet();
@@ -19,7 +25,7 @@ export const App = () => {
     if (wallet.chainId != 1 && wallet.address) {
       setTitle("Switch to Mainnet");
     } else if (wallet.chainId == 1) {
-      isContractLoaded && getContractName().then((name) => setTitle(name));
+      isContractLoaded && getContractName().then(() => setTitle("Gemstone Minter"));
     }
   }, [isContractLoaded, wallet]);
 
@@ -35,25 +41,12 @@ export const App = () => {
   };
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        background: "linear-gradient(to bottom, #eff1fa, #c1c7eb)",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "2rem",
-          paddingTop: "4rem",
-          textAlign: "center",
-        }}
-      >
-        <span style={{ fontSize: "32px" }}>{title}</span>
+    <div className="body-div">
+      <div className="content-wrap">
+        <img src={mgc_logo} />
+        <span className="title">{title}</span>
         <input
+          className="gemstone-picker"
           type="range"
           min="0"
           max="5"
@@ -70,7 +63,7 @@ export const App = () => {
           isDisabled={false}
         />
         <span style={{ fontSize: "16px" }}>
-          Connected address: {wallet.address ? wallet.address : "None"}
+          Connected address: {wallet.address ? truncateEthAddress(wallet.address) : "None"}
         </span>
       </div>
     </div>
