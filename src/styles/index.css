@@ -68,7 +68,7 @@ html {
     justify-content: space-evenly;
     height: 80%;
 }
-.footer div a {
+.footer div a { 
     color: #f8f7f1;
     font-size: 11px;
     text-transform: uppercase;

@@ -20,15 +20,17 @@ export const App = () => {
   const { mint, getContractName, isContractLoaded } = useContract();
   const wallet = useRecoilValue(walletState);
   const [title, setTitle] = useState("");
+  // eslint-disable-next-line
   const [gemstoneId, setGemstoneId] = useState(0);
   const [isAwaitingTxn, setIsAwaitingTxn] = useState(false);
 
   useEffect(() => {
-    if (wallet.chainId != 1 && wallet.address) {
+    if (wallet.chainId !== 1 && wallet.address) {
       setTitle("Switch to Mainnet");
-    } else if (wallet.chainId == 1) {
+    } else if (wallet.chainId === 1) {
       isContractLoaded && getContractName().then(() => setTitle("Gemstone Minter"));
     }
+    // eslint-disable-next-line
   }, [isContractLoaded, wallet]);
 
   const handleMint = async () => {
@@ -47,10 +49,10 @@ export const App = () => {
   return (
     <div className="body-div">
       <div className="content-wrap">
-        <img className="logo" src={mgc_logo} />
+        <img alt="MGC logo" className="logo" src={mgc_logo} />
         <span className="title">{title}</span>
         <div className="gemstone-section">
-          <img className="gemstone-img" src={Amethyst} />
+          <img alt="gemstone" className="gemstone-img" src={Amethyst} />
           <div>
             {/* hiding gemstone input for now because only purple gemstone is currently available */}
             {/* <input
@@ -82,7 +84,7 @@ export const App = () => {
           <a href="https://www.maltgraincane.com/pages/about">About Us</a>
           <a href="https://www.minthouse.dev/">NFTs by Minthouse.dev</a>
         </div>
-        <img src={gif} />
+        <img alt="under construction" src={gif} />
       </div>
     </div>
   );

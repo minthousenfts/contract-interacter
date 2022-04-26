@@ -4,18 +4,22 @@ import { useRecoilState } from "recoil";
 import { walletState } from "../state/app";
 
 export const useWallet = () => {
+  // eslint-disable-next-line
   const [wallet, setWallet] = useRecoilState(walletState);
   const [provider, setProvider] = useState(null);
   const [signer, setSigner] = useState(null);
 
   useEffect(() => {
     window.ethereum && getMetamask();
+    // eslint-disable-next-line
   }, [window.ethereum]);
 
   useEffect(() => {
     if (!signer) return;
+    // eslint-disable-next-line
     setWalletState();
     listenToNetworkSwitch();
+    // eslint-disable-next-line
   }, [signer]);
 
   const listenToNetworkSwitch = () => {
