@@ -52,8 +52,11 @@ export const App = () => {
         <img alt="MGC logo" className="logo" src={mgc_logo} />
         <span className="title">{title}</span>
         <div className="gemstone-section">
-          <img alt="gemstone" className="gemstone-img" src={Amethyst} />
-          <div>
+          <div className="showcase">
+            <img alt="gemstone" className="gemstone-img" src={Amethyst} />
+            <p>Amethyst gemstone #1-50</p>
+          </div>
+          <div className="minting-section">
             {/* hiding gemstone input for now because only purple gemstone is currently available */}
             {/* <input
               className="gemstone-picker"
