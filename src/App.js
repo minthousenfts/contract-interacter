@@ -80,7 +80,7 @@ export const App = () => {
       </div>
       <div className="footer">
         <div>
-          <a href="https://www.maltgraincane.com/">Malt, Grain & Cane Store</a>
+          <a href="https://www.maltgraincane.com/bottleshop">Malt, Grain & Cane Store</a>
           <a href="https://www.maltgraincane.com/pages/about">About Us</a>
           <a href="https://www.minthouse.dev/">NFTs by Minthouse.dev</a>
         </div>
