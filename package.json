@@ -1,6 +1,6 @@
 {
   "name": "contract-interacter",
-  "homepage": "https://jacob-abe.github.io/contract-interacter-base/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
