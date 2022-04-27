@@ -12,7 +12,7 @@ import truncateEthAddress from "truncate-eth-address";
 import "./styles/index.css";
 // import images 
 import mgc_logo from "./assets/mgc_logo.png";
-import Amethyst from "./assets/Stone_Purple.png";
+import Amethyst from "./assets/Stone_Purple.jpg";
 import gif from "./assets/pikachu.gif";
 
 export const App = () => {
@@ -83,6 +83,7 @@ export const App = () => {
       </div>
       <div className="footer">
         <div>
+          <a href="https://opensea.io/collection/mgc-hos">Collection on Opensea</a>
           <a href="https://www.maltgraincane.com/bottleshop">Malt, Grain & Cane Store</a>
           <a href="https://www.maltgraincane.com/pages/about">About Us</a>
           <a href="https://www.minthouse.dev/">NFTs by Minthouse.dev</a>
