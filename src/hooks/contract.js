@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import mgcContractAbi from "../utils/mgc_contract.json";
 import { useWallet } from "./wallet";
-const contractAddress = "0x309dd80e29ab87b553592dc0c4938562adfab3c9";
+const contractAddress = "0x05120A6b33e89844cD5a447545Bc6BB63d4b329b";
 
 export const useContract = () => {
   const { provider, signer } = useWallet();
