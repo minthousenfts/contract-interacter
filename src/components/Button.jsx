@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { walletState } from "../state/app";
-import "../styles/button.css";
+import "./styles/components/button.css";
 
 export const Button = (props) => {
   const wallet = useRecoilValue(walletState);
@@ -20,7 +20,7 @@ export const Button = (props) => {
   };
 
   return (
-    <button onClick={handleClick} disabled={props.isDisabled}>
+    <button className="button" onClick={handleClick} disabled={props.isDisabled}>
       {props.isLoading ? (
         "Minting"
       ) : message}

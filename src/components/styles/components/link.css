@@ -1,0 +1,19 @@
+.innerLink {
+    padding: 15px 25px;
+    font-weight: bold;
+    transition: ease-in-out 0.3s;
+    text-transform: uppercase;
+    color: #4a4a4a;
+    text-decoration: none;
+    position: relative;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    letter-spacing: 3px;
+    /* box-shadow: -1px 2px 0px white; */
+}
+
+.innerLink:hover {
+    border: 2px solid #4a4a4a;
+    padding: 15px 35px;
+    /* box-shadow: -5px 5px 15px rgb(29, 29, 29); */
+}

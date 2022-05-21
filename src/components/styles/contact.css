@@ -1,0 +1,11 @@
+.contact-page {
+    text-align: center;
+}
+
+.contact-page * {
+    margin: 20px 0 30px;
+}
+
+.contact-us-img {
+    max-width: 300px;
+}

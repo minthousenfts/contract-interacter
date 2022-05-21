@@ -1,0 +1,24 @@
+.about-wrapper {
+    padding: 3vw 13vw;
+}
+
+.about-wrapper h1 {
+    text-align: center;
+    margin: 0 0 4vw;
+}
+
+.about-content {
+    display: flex;
+}
+
+.about-content p {
+    padding: 20px 5%;
+    line-height: 150%;
+    /* background-color: red; */
+}
+
+@media only screen and (max-width: 800px) {
+    .about-content {
+        flex-direction: column;
+    }
+}

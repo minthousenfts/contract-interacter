@@ -1,0 +1,25 @@
+.other-gemstones-section {
+    width: 80%;
+    padding: 10vh 10%;
+    overflow: hidden;
+    /* background-color: red; */
+}
+
+.other-gemstones-section h3 {
+    font-size: 24px;
+    border-bottom: 1px solid #414141;
+    padding-bottom: 2px;
+    margin-bottom: 20px;
+}
+
+.other-gemstones-section a {
+    max-width: 20%;
+}
+
+.other-gemstones-section a img {
+    width: 200px;
+}
+
+.other-gemstones-section a p {
+    margin-left: 15px !important;
+}

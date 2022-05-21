@@ -1,95 +1,29 @@
 // import dependencies
-import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import { useRecoilValue } from "recoil";
-import { Button } from "./components/Button";
-import { useContract } from "./hooks/contract";
-import { useWallet } from "./hooks/wallet";
-import { walletState } from "./state/app";
-import { getGemstoneName } from "./utils/functions";
-import truncateEthAddress from "truncate-eth-address";
-// import styles 
-import "./styles/index.css";
-// import images 
-import mgc_logo from "./assets/mgc_logo.png";
-import Amethyst from "./assets/Stone_Purple.jpg";
-import gif from "./assets/pikachu.gif";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Redirect } from 'react-router-dom';
+// import components
+import GemPage from './components/GemPage';
+import Home2022 from './components/Home2022';
+import Contact from './components/Contact';
+import About from './components/About';
+
+// font awesome icons
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+
+// library.add(fab);
 
 export const App = () => {
-  const { connectToMetamask } = useWallet();
-  const { mint, getContractName, isContractLoaded } = useContract();
-  const wallet = useRecoilValue(walletState);
-  const [title, setTitle] = useState("");
-  // eslint-disable-next-line
-  const [gemstoneId, setGemstoneId] = useState(0);
-  const [isAwaitingTxn, setIsAwaitingTxn] = useState(false);
-
-  useEffect(() => {
-    if (wallet.chainId !== 1 && wallet.address) {
-      setTitle("Switch to Mainnet");
-    } else if (wallet.chainId === 1) {
-      isContractLoaded && getContractName().then(() => setTitle("Gemstone Minter"));
-    }
-    // eslint-disable-next-line
-  }, [isContractLoaded, wallet]);
-
-  const handleMint = async () => {
-    setIsAwaitingTxn(true);
-    const response = await mint(wallet.address, gemstoneId);
-    if (response) {
-      console.log(response);
-      toast.success("Mint successful. Might take a while to show on opensea.");
-    } else {
-      toast.error("Mint failed. Most likely address is not whitelisted. see console for full error");
-      console.log(toast.error)
-    }
-    setIsAwaitingTxn(false);
-  };
-
   return (
-    <div className="body-div">
-      <div className="content-wrap">
-        <img alt="MGC logo" className="logo" src={mgc_logo} />
-        <span className="title">{title}</span>
-        <div className="gemstone-section">
-          <div className="showcase">
-            <img alt="gemstone" className="gemstone-img" src={Amethyst} />
-            <p>Amethyst gemstone #1-50</p>
-          </div>
-          <div className="minting-section">
-            {/* hiding gemstone input for now because only purple gemstone is currently available */}
-            {/* <input
-              className="gemstone-picker"
-              type="range"
-              min="0"
-              max="5"
-              value={gemstoneId}
-              onChange={(e) => {
-                setGemstoneId(+e.target.value);
-              }}
-            /> */}
-            <Button
-              onConnectToMetamask={connectToMetamask}
-              onMint={handleMint}
-              gemType={getGemstoneName(gemstoneId)}
-              isLoading={isAwaitingTxn}
-              isDisabled={false}
-            />
-            <span style={{ fontSize: "16px" }}>
-              Connected address: {wallet.address ? truncateEthAddress(wallet.address) : "None"}
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="footer">
-        <div>
-          <a href="https://opensea.io/collection/mgc-hos">Collection on Opensea</a>
-          <a href="https://www.maltgraincane.com/bottleshop">Malt, Grain & Cane Store</a>
-          <a href="https://www.maltgraincane.com/pages/about">About Us</a>
-          <a href="https://www.minthouse.dev/">NFTs by Minthouse.dev</a>
-        </div>
-        <img alt="under construction" src={gif} />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home2022/>} />
+        <Route path='/:gemstoneId' element={<GemPage/>} />
+        <Route path='/contact' element={<Contact/>} />
+        <Route path='/about' element={<About/>} />
+      </Routes>
+    </Router>
   );
-};
+}
+
+export default App;

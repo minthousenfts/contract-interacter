@@ -1,6 +1,6 @@
 export const getGemstoneName = (gemstoneId) => {
   let gemstoneName = "";
-  switch (gemstoneId) {
+  switch (gemstoneId - 1) {
     case 0:
       gemstoneName = "Amethyst";
       break;

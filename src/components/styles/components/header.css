@@ -1,0 +1,14 @@
+.header-wrap {
+    position: relative;
+    height: 100px;
+    padding: 15px 0;
+    /* background-color: aquamarine; */
+}
+
+.logo {
+    width: 80px;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
+}

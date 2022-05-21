@@ -15,13 +15,49 @@ html {
     position: relative;
 }
 
+/* For the home display page */
+
+.gemstones-home-page {
+    text-align: center;
+}
+
+.gemstones-home-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px 10vw;
+}
+
+.gemstones-display a {
+    text-align: center;
+    width: 30%;
+    margin: 30px 10px;
+    text-decoration: none;
+}
+
+.gemstones-display a p {
+    text-align: left;
+    margin-left: 35px;
+    padding-left: 2px;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all ease-in-out 0.3s;
+}
+.gemstones-display a:hover p {
+    padding-left: 10px;
+}
+
+/* For the individual gemstone page */
+
 .gemstone-section {
     display: flex;
-    width: 100vh;
+    width: 60vw;
+    margin: 40px 0;
 }
 .gemstone-section .showcase {
     text-align: center;
-    color: purple;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: bold;
@@ -36,9 +72,6 @@ html {
     padding: 30px;
 }
 
-.logo {
-    width: 100px;
-}
 .gemstone-img {
     max-width: 40vw;
     max-height: 35vh;
@@ -58,11 +91,13 @@ html {
     font-size: 24px;
 }
 
+/* FOOTER STYLES */
+
 .footer {
     background-color: black;
     height: 25vh;
-    width: calc(100vw - 70px);
-    position: absolute;
+    /* width: calc(100vw - 70px); */
+    /* position: absolute; */
     bottom: 0;
     display: flex;
     justify-content: space-between;
@@ -106,5 +141,23 @@ html {
     }
     .footer {
         position: static;
+    }
+
+    .gemstones-display a {
+        width: 50%;
+        margin: 20px 10px;
+    }
+
+    .gemstones-display a p {
+        font-size: 12px;
+        margin-left: 15px;
+    }
+
+    .gemstone-section { 
+        width: 80vw;
+    }
+
+    .gemstone-section .minting-section {
+        width: 50vw;
     }
 }
