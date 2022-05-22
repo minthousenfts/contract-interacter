@@ -21,25 +21,30 @@ export default function Home2022() {
                     <img className='gemstone-img' src={Amethyst} alt="Amethyst"/>
                     <p>Mint Amethyst</p>
                 </a>
-                <a href='/2'>
+                <a href='/'> {/* will become '/2' */}
                     <img className='gemstone-img' src={Sapphire} alt="Sapphire"/>
-                    <p>Mint Sapphire</p>
+                    {/* <p>Mint Sapphire</p> */}
+                    <p>Coming soon</p>
                 </a>
-                <a href='/3'>
+                <a href='/'>
                     <img className='gemstone-img' src={Emerald} alt="Emerald"/>
-                    <p>Mint Emerald</p>
+                    {/* <p>Mint Emerald</p> */}
+                    <p>Coming soon</p>
                 </a>
-                <a href='/4'>
+                <a href='/'>
                     <img className='gemstone-img' src={Citrine} alt="Citrine"/>
-                    <p>Mint Citrine</p>
+                    {/* <p>Mint Citrine</p> */}
+                    <p>Coming soon</p>
                 </a>
-                <a href='/5'>
+                <a href='/'>
                     <img className='gemstone-img' src={Amber} alt="Amber"/>
-                    <p>Mint Amber</p>
+                    {/* <p>Mint Amber</p> */}
+                    <p>Coming soon</p>
                 </a>
-                <a href='/6'>
+                <a href='/'>
                     <img className='gemstone-img' src={Ruby} alt="Ruby"/>
-                    <p>Mint Ruby</p>
+                    {/* <p>Mint Ruby</p> */}
+                    <p>Coming soon</p>
                 </a>
             </div>
         </div>

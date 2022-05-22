@@ -1,6 +1,6 @@
 // import dependencies
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import components
 import GemPage from './components/GemPage';
 import Home2022 from './components/Home2022';

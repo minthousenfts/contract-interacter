@@ -20,7 +20,6 @@ import Lost from './Lost';
 import "./styles/index.css";
 import "./styles/carousel.css";
 // import images 
-import mgc from "../assets/mgc.png";
 import Amethyst from "../assets/Stone_Purple.jpg"; // 1
 import Sapphire from "../assets/Stone_Blue.jpg"; // 2
 import Emerald from "../assets/Stone_Green.jpg"; // 3
@@ -111,33 +110,38 @@ export const GemPage = () => {
     </a>
     ),
     (
-    <a href='/2'>
+    <a href='/'>
       <img className='gemstone-img' src={Sapphire} alt="Sapphire"/>
-      <p>Mint Sapphire</p>
+      {/* <p>Mint Sapphire</p> */}
+      <p>Coming soon</p>
     </a>
     ),
     (
-    <a href='/3'>
+    <a href='/'>
       <img className='gemstone-img' src={Emerald} alt="Emerald"/>
-      <p>Mint Emerald</p>
+      {/* <p>Mint Emerald</p> */}
+      <p>Coming soon</p>
     </a>
     ),
     (
-    <a href='/4'>
+    <a href='/'>
       <img className='gemstone-img' src={Citrine} alt="Citrine"/>
-      <p>Mint Citrine</p>
+      {/* <p>Mint Citrine</p> */}
+      <p>Coming soon</p>
     </a>
     ),
     (
-    <a href='/5'>
+    <a href='/'>
       <img className='gemstone-img' src={Amber} alt="Amber"/>
-      <p>Mint Amber</p>
+      {/* <p>Mint Amber</p> */}
+      <p>Coming soon</p>
     </a>
     ),
     (
-    <a href='/6'>
+    <a href='/'>
       <img className='gemstone-img' src={Ruby} alt="Ruby"/>
-      <p>Mint Ruby</p>
+      {/* <p>Mint Ruby</p> */}
+      <p>Coming soon</p>
     </a>
     )
   ];
@@ -147,7 +151,8 @@ export const GemPage = () => {
     1024: { items: 3 },
   };
 
-  if (gemstoneId >= 1 && gemstoneId <=6) {
+  // only allow for id 1 because it's currently the only released version
+  if (gemstoneId >= 1 && gemstoneId <=1) {
     return (
       <div className="body-div">
           <Header/>
