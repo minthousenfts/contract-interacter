@@ -91,7 +91,7 @@ export const GemPage = () => {
 
   const handleMint = async () => {
     setIsAwaitingTxn(true);
-    const response = await mint(wallet.address, gemstoneId);
+    const response = await mint(wallet.address, (gemstoneId - 1));
     if (response) {
       console.log(response);
       toast.success("Mint successful. Might take a while to show on opensea.");
